@@ -1,0 +1,22 @@
+{{extend 'layout.html'}}
+
+{{block head}}
+{{end}}
+
+<div class="main_content">
+    {{if rows is None:}}
+        <span> log in to see starred products</span>
+    {{else:}}
+        <table>
+            <th> Name </th>
+            <th> Price </th>
+            {{for r in rows: }}
+                <tr> 
+                    <td>{{=r.f_name}}</td>
+                    <td>{{=r.f_price}}</td>
+                </tr>
+            {{pass}}
+        </table>
+    {{pass}}
+</div>
+
